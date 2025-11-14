@@ -6,7 +6,7 @@
 /*   By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:36:20 by tgobert           #+#    #+#             */
-/*   Updated: 2025/11/12 12:00:23 by tgobert          ###   ########.fr       */
+/*   Updated: 2025/11/13 20:18:33 by tgobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,23 +22,20 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_strchr(const char *s, int c, int find_new_line)
+char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
 	char	*p;
 
 	p = (char *)s;
 	i = 0;
-	while (i <= ft_strlen(s)) // + 1 ?
+	while (i <= ft_strlen(s))
 	{
 		if ((unsigned char)p[i] == (unsigned char)c)
-		{
-			find_new_line = 1;
-			return (i);
-		}
+			return (&p[i]);
 		i++;
 	}
-	return (i);
+	return (NULL);
 }
 
 char	*ft_strdup(const char *s)
@@ -89,7 +86,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start + len > ft_strlen(s))
 		len = ft_strlen(s) - start;
 	if (start >= ft_strlen(s))
-		return (ft_calloc(1, sizeof(char)));
+		return (malloc(sizeof(char)* 1));
 	ptr = malloc(sizeof(char) * len + 1);
 	if (!ptr)
 		return (NULL);
