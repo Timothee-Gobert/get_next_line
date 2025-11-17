@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: inox <inox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:37:43 by tgobert           #+#    #+#             */
-/*   Updated: 2025/11/14 09:14:13 by tgobert          ###   ########.fr       */
+/*   Updated: 2025/11/17 13:03:45 by inox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,18 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	return (i);
 }
 
-void	ft_del_begin_and_fill_line(char *buffer, size_t i)
+void	ft_del_begin_and_fill_line(char *buffer,char *back, size_t i)
 {
 	size_t	j;
 
 	j = 0;
-	while (i <= ft_strlen(buffer) + 1)
+	while (j < i)
 	{
-		
+		back[j] = buffer[j];
+		j++;
 	}
+	j = 0;
+	while (i <= ft_strlen(buffer))
 		buffer[j++] = buffer[i++];
 }
 
@@ -92,38 +95,23 @@ char	*get_next_line(int fd)
 	int			nb_read;				// stocke le retour de read
 	char		*back;
 	size_t		i;
-	
-	if (!fd || !buffer[0])
-		return (NULL);
+
+	back = "";
 	nb_read = -1;
-	i = 0;
-	nb_read = read(fd, buffer, BUFFER_SIZE);
-	if (nb_read == -1)
-		return (NULL);
 	while (nb_read != 0)
 	{
-		
-	}
-	
-	{
-		i = ft_find_next_line(buffer, '\n');
-		if (i != ft_strlen(buffer))
+		if (ft_strlen(buffer) < 2)
 		{
-			back = ft_substr(buffer, 0, i + 1);
-			ft_fuck_the_start(buffer, i);
-			return(back);
+			nb_read = read(fd, buffer, BUFFER_SIZE);
+			if (nb_read < 1 || !fd)
+				return (NULL);
+			buffer[nb_read] = '\0';
 		}
-		// else
-		// {
-			
-		// }
+		i = ft_find_next_line(buffer, '\n');
+		back = ft_substr(buffer, 0, i + 1);
+		ft_del_begin_and_fill_line(buffer, back, i);
+		if (i != ft_strlen(buffer))
+			return(back);
 	}
 	return(NULL);
-	// while (nb_read != 0)
-	// {
-	// 	nb_read = read(fd, buffer, BUFFER_SIZE);
-	// 	if (nb_read == -1)
-	// 		return (NULL);
-	// 	buffer[nb_read] = '\0';
-	// }
 }

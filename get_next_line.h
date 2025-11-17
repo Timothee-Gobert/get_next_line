@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: inox <inox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:37:40 by tgobert           #+#    #+#             */
-/*   Updated: 2025/11/13 20:30:12 by tgobert          ###   ########.fr       */
+/*   Updated: 2025/11/16 10:20:38 by inox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# define BUFFER_SIZE 10
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 # include <stdlib.h>
 # include <unistd.h>
