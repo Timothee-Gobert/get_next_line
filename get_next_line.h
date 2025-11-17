@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inox <inox@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:37:40 by tgobert           #+#    #+#             */
-/*   Updated: 2025/11/16 10:20:38 by inox             ###   ########.fr       */
+/*   Updated: 2025/11/17 18:28:49 by tgobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
 
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
@@ -31,5 +33,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 void	ft_fuck_the_start(char *buffer, size_t i);
 int		ft_find_next_line(const char *s, int c);
 char	*get_next_line(int fd);
+
+int main(int argc, char const *argv[]);
 
 #endif

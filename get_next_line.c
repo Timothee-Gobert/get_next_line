@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inox <inox@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:37:43 by tgobert           #+#    #+#             */
-/*   Updated: 2025/11/17 13:03:45 by inox             ###   ########.fr       */
+/*   Updated: 2025/11/17 18:44:07 by tgobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-#include <fcntl.h>
-#include <stdio.h>
-#include <unistd.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -80,7 +76,7 @@ int	ft_find_next_line(const char *s, int c)
 
 	p = (char *)s;
 	i = 0;
-	while (i <= ft_strlen(s) + 1)
+	while (i <= ft_strlen(s))
 	{
 		if ((unsigned char)p[i] == (unsigned char)c)
 			return (i);
@@ -108,7 +104,7 @@ char	*get_next_line(int fd)
 			buffer[nb_read] = '\0';
 		}
 		i = ft_find_next_line(buffer, '\n');
-		back = ft_substr(buffer, 0, i + 1);
+		back = ft_strjoin(back, ft_substr(buffer, 0, i));
 		ft_del_begin_and_fill_line(buffer, back, i);
 		if (i != ft_strlen(buffer))
 			return(back);
