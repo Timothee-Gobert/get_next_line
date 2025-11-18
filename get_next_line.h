@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: inox <inox@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:37:40 by tgobert           #+#    #+#             */
-/*   Updated: 2025/11/17 21:20:56 by inox             ###   ########.fr       */
+/*   Updated: 2025/11/18 11:22:48 by tgobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 67
 # endif
 
 # include <stdlib.h>
@@ -22,17 +22,14 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-void	ft_fuck_the_start(char *buffer, size_t i);
-int		ft_strchr(const char *s, int c);
-char	*get_next_line(int fd);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+int		ft_strchr_i(const char *s, int c);
 
-int main(int argc, char const *argv[]);
+size_t	ft_strlen(const char *s);
+void	ft_del_begin(char *buffer, size_t i);
+char	*get_next_line(int fd);
 
 #endif

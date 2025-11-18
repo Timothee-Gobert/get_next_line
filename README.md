@@ -27,3 +27,5 @@ read() attempts to read up to count bytes from file descriptor fd into the buffe
 On files that support seeking, the read operation commences at the file offset, and the file offset is incremented by the number of bytes read.  If the file offset is at or past the end of file, no bytes are read, and read() returns zero.
 
 If count is zero, read() may detect the errors described below. In the absence of any errors, or if read() does not check for errors, a read() with a count of 0 returns zero and has no other effects.
+
+LES VARIABLE SATITC ET global QUI DOIVENT ETRE init a 0 le mieu cest de pas le faire car c'est fait pas la bss a se renseigne 

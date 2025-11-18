@@ -1,18 +1,6 @@
 # *********************** int main(int argc, char const *argv[])#
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    test                                               :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/11 17:52:43 by tgobert           #+#    #+#              #
-#    Updated: 2025/11/11 17:53:03 by tgobert          ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 je ne sais 
-pas 
-
+pas  
 
 quoi ecrire
-mio
+m

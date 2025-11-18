@@ -6,7 +6,7 @@
 /*   By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 12:51:46 by inox              #+#    #+#             */
-/*   Updated: 2025/11/17 18:30:56 by tgobert          ###   ########.fr       */
+/*   Updated: 2025/11/18 11:21:36 by tgobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int main(int argc, char const *argv[])
 {
 	int	fd;
 	int	i;
+	char *line;
 
 	if (argc != 3)
 	{
@@ -31,7 +32,9 @@ int main(int argc, char const *argv[])
 	i = 0;
 	while (i < atoi(argv[2]))
 	{
-		printf("%s\n", get_next_line(fd));
+		line = get_next_line(fd);
+		printf("%s\n", line);
+		free(line);
 		i++;
 	}
 	return 0;
