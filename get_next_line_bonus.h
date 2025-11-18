@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+        */
+/*   By: inox <inox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:37:40 by tgobert           #+#    #+#             */
-/*   Updated: 2025/11/18 14:57:56 by tgobert          ###   ########.fr       */
+/*   Updated: 2025/11/18 20:51:46 by inox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ int		ft_strchr_i(const char *s, int c);
 size_t	ft_strlen(const char *s);
 void	ft_del_begin(char *buffer, size_t i);
 char	*get_next_line(int fd);
+int ft_atoi(const char *nptr);
+char *ft_itoa_unsigned(int n);
 
 #endif

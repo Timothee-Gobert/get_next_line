@@ -12,6 +12,15 @@ k
 l
 m
 n
-op
+o
+p
 q
-tuvwxyz
+r
+s
+t
+u
+v
+w
+x
+y
+z
