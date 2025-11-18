@@ -6,17 +6,17 @@
 /*   By: tgobert <tgobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 12:51:46 by inox              #+#    #+#             */
-/*   Updated: 2025/11/18 11:21:36 by tgobert          ###   ########.fr       */
+/*   Updated: 2025/11/18 14:54:30 by tgobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int main(int argc, char const *argv[])
+int	main(int argc, char const *argv[])
 {
-	int	fd;
-	int	i;
-	char *line;
+	int		fd;
+	int		i;
+	char	*line;
 
 	if (argc != 3)
 	{
@@ -37,5 +37,5 @@ int main(int argc, char const *argv[])
 		free(line);
 		i++;
 	}
-	return 0;
+	return (0);
 }
